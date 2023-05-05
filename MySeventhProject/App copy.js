@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default class TouchableButton extends Component {
-  _onPressButton(){
-    alert('You tapped a button')
-  }
-  render(){
+export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.containerButton}>
         <Button
-          onPress={this._onPressButton}
+          onPress={() => {
+            alert('You tapped Button 1');
+          }}
           title="Press Button 1"
         />
       </View>
@@ -18,12 +16,16 @@ export default class TouchableButton extends Component {
       <View style={styles.containerLayoutButton}>
 
       <Button
-          onPress={this._onPressButton}
+          onPress={() => {
+            alert('You tapped Button 2');
+          }}
           title="Press Button 2"
         />
 
       <Button
-          onPress={this._onPressButton}
+          onPress={() => {
+            alert('You tapped Button Great!');
+          }}
           title="Great!"
           color="green"
         />  
@@ -32,14 +34,15 @@ export default class TouchableButton extends Component {
 
       <View style={styles.containerButton}>
       <Button
-          onPress={this._onPressButton}
+          onPress={() => {
+            alert('You tapped Tap Me!');
+          }}
           title="Tap Me!"
         />  
       </View>
 
     </View>
   );
-}
 }
 
 const styles = StyleSheet.create({
